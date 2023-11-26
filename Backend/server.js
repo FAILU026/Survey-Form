@@ -5,7 +5,13 @@ import { Survey } from "./models/serveyModel.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());  
+app.use(cors(
+  {
+    origin: ["http://localhost:3000"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));  
 
 
 const PORT = process.env.PORT || 5000;
